@@ -1,6 +1,10 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "CO2 Emissions",
+    "title": {
+        "text": "CO2 Emissions",
+        "subtitle": "A look into the largest carbon-dioxide polluters across the globe."
+    },
+    "description": "A look into the largest carbon-dioxide polluters across the globe.",
     "width": 800,
     "height": 400,
     "projection": {"type": "equirectangular"},
@@ -21,7 +25,7 @@
                     }
                 },
                 "key": "Country",
-                "fields": ["Annual CO₂ emissions (mega-tonnes)"]
+                "fields": ["Annual CO₂ emissions (Mt)"]
             }
             
             
@@ -30,13 +34,13 @@
     "mark": {"type": "geoshape", "tooltip": true},
     "encoding": {
         "color": {
-            "field": "Annual CO₂ emissions (mega-tonnes)",
+            "field": "Annual CO₂ emissions (Mt)",
             "type": "quantitative",
             "scale": {"type": "log"}
         },
         "tooltip": [
             {"field": "properties.NAME", "title": "Country"},
-            {"field": "Annual CO₂ emissions (mega-tonnes)", "title": "CO₂ (Mt)"}
+            {"field": "Annual CO₂ emissions (Mt)", "title": "CO₂ (Mt)"}
         ]
     }
     
