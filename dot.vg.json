@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "CO2 Emissions vs. GDP (2021)",
+        "subtitle": "Do richer companies emit more CO2?"
+    },
+    "description": "A view into the countries and their CO2 emissions.",
+    "width": 800,
+    "height": 400,
+    "data": {
+        "url": "co2_gdp.csv",
+        "format": {"type": "csv"} 
+    },
+    "mark": {"type": "point", "tooltip": true},
+    "encoding": {
+        "x": {
+            "field": "Annual CO₂ emissions (mega-tonnes)",
+            "type": "quantitative",
+            "scale": {"type": "log"}
+        },
+        "y": {
+            "field": "GDP Per Capita",
+            "type": "quantitative"
+        },
+        "tooltip": [
+            {"field": "Country"},
+            {"field": "Change in Annual CO₂ emissions (Mt)", "title": "CO₂ (Mt)"}
+        ]
+    }
+    
+}

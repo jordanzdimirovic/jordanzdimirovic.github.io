@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "CO2 Emissions 10-Year Change (2012-2021)",
+        "subtitle": "A view into the countries that are changing their CO2 emissions."
+    },
+    "description": "A view into the countries that are changing their CO2 emissions.",
+    "width": 800,
+    "height": 400,
+    "data": {
+        "url": "co2_10yr.csv",
+        "format": {"type": "csv"} 
+    },
+    "mark": {"type": "bar", "tooltip": true},
+    "encoding": {
+        "x": {
+            "field": "Country",
+            "type": "nominal",
+            "sort": "y"
+        },
+        "y": {
+            "field": "Change in CO₂ Emissions (Mt)",
+            "type": "quantitative",
+            "scale": {"type": "linear"}
+        },
+        "tooltip": [
+            {"field": "Country"},
+            {"field": "Change in Annual CO₂ emissions (Mt)", "title": "CO₂ (Mt)"}
+        ]
+    }
+    
+}
