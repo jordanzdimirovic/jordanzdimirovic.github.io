@@ -67,7 +67,7 @@
                 "color": {
                     "field": "Annual CO₂ emissions (Mt)",
                     "type": "quantitative",
-                    "scale": {"type": "sqrt", "domainMin": 0, "domainMax": 12000}
+                    "scale": {"type": "sqrt", "domainMin": 0, "domainMax": 12000, "range": ["lightgrey", "orange", "darkorange", "red"]}
                 },
                 "tooltip": [
                     {"field": "Country"},
