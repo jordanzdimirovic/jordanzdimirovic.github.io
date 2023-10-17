@@ -1,36 +1,105 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/vega"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite"></script>
     <!-- Import vega-embed -->
     <script src="https://cdn.jsdelivr.net/npm/vega-embed"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Roboto:wght@300&display=swap" rel="stylesheet">
 
-    <!-- CSS file -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
 
-  </head>
-
-  <body>
-  
-    <div id="mapCO2"></div>
-    <div id="barCO2"></div>
-    <div id="dotCO2"></div>
+    <link rel="stylesheet" href="css/styles.css">
+    
+</head>
+<body>
+    <div class="header">
+        <h1>Carbon Dioxide</h1>
+        <hr>
+        <h2 style="padding: 30px;">The prevalence of CO2, a greenhouse gas emitted by countries across the globe.</h2>
+    </div>
+    <div class="section">
+        <div id="mapCO2">
+            <div class="graph">
+                <!-- Embed your Vega graph here -->
+            </div>
+        </div>
+        <div class="annotation">
+            <h1>Global Glance</h1>
+            <br>
+            <p>
+                Through the lens of a world-map, the modern contributors of carbon-dioxide can be visualised.
+                <br>
+                Global industrialisation, felt most strongly in <i>China</i> and particular western countries
+                (most notably, the <i>United States of America</i>) is a likely driver of these numbers.
+                <br><br>
+                When rolling back the clock, a rapid increase in <i>China's</i> carbon emissions can be observed during the first decade of the century.
+                <br><br>
+                <i>Tip: Use the slider to compare emissions across the last 100 years.</i>
+            </p>
+        </div>
+    </div>
+    <div class="section">
+        <div class="annotation" style="text-align: right;">
+            <h1>Monetary Motivations</h1>
+            <br>
+            <p>
+                It is reasonable to conclude that the economical health of a country may have predictive power over its emissions.
+                
+                <br>
+                Comparing <i>GDP per capita</i>, a standard indicator for a country's wealth, and the annual carbon emissions of the country,
+                a slight negative correlation is observed.
+                <br>
+                This indicates that wealthier countries are better placed to have lower emissions.
+                <br><br>
+                <i>Note that the bubble size indicates the country's population.</i>
+            </p>
+        </div>
+        <div class="graph-container">
+            <div id="dotCO2">
+                <!-- Embed your Vega graph here -->
+            </div>
+        </div>
+        
+    </div>
+    <div class="section">
+        <div class="graph-container">
+            <div id="barCO2">
+                <!-- Embed your Vega graph here -->
+            </div>
+        </div>
+        <div class="annotation">
+            <h1>Changing Climate</h1>
+            <br>
+            <p>
+                A decade-long comparison window was selected to obtain a perspective on change. Unfortunately, the results are not entirely positive.
+                <br><br>
+                Many western countries have made welcome strides against their carbon emissions; countries
+                such as the <i>United States of America</i> and <i>Japan</i> with the most significant improvement over the ten-year period.
+                <br><br>
+                Discouragingly, the same cannot be said for <i>India</i> and <i>China</i>. These alarming increases over the last ten years
+                should likely be considered a "pollusion proxy" from much of the developed world; much of the emissions are a
+                direct result of the western world's delegation of production.
+            </p>
+        </div>
+    </div>
     <script type="text/javascript">
       
-      var spec1 = "main.vg.json";
-      var spec2 = "bar.vg.json";
-      var spec3 = "dot.vg.json";
-      vegaEmbed('#mapCO2', spec1).then(function(result) {
-        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-      }).catch(console.error);
-      vegaEmbed('#barCO2', spec2).then(function(result) {
-        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-      }).catch(console.error);
-      vegaEmbed('#dotCO2', spec3).then(function(result) {
-        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-      }).catch(console.error);
-    </script>
-
-  </body>
+        var spec1 = "main.vg.json";
+        var spec2 = "bar.vg.json";
+        var spec3 = "dot.vg.json";
+        vegaEmbed('#mapCO2', spec1).then(function(result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+        vegaEmbed('#barCO2', spec2).then(function(result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+        vegaEmbed('#dotCO2', spec3).then(function(result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+      </script>
+</body>
 </html>

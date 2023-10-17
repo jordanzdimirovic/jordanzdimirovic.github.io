@@ -1,9 +1,5 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-        "text": "CO2 Emissions",
-        "subtitle": "A look into the contributors to global carbon-dioxide emissions across the globe."
-    },
     "description": "A look into the largest carbon-dioxide polluters across the globe.",
     "width": 800,
     "height": 400,
@@ -13,7 +9,7 @@
             "value": 2021,
             "bind": {
                 "input": "range",
-                "min": 1800,
+                "min": 1921,
                 "max": 2021,
                 "step": 1,
                 "name": "Year: "
