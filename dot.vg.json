@@ -11,21 +11,57 @@
         "url": "co2_gdp.csv",
         "format": {"type": "csv"} 
     },
-    "mark": {"type": "point", "tooltip": true},
-    "encoding": {
-        "x": {
-            "field": "Annual CO₂ emissions (mega-tonnes)",
-            "type": "quantitative",
-            "scale": {"type": "log"}
-        },
-        "y": {
-            "field": "GDP Per Capita",
-            "type": "quantitative"
-        },
-        "tooltip": [
-            {"field": "Country"},
-            {"field": "Change in Annual CO₂ emissions (Mt)", "title": "CO₂ (Mt)"}
-        ]
-    }
-    
+    "layer": [
+        {
+            "transform": [
+                {
+                    "calculate": "format(datum.Population / 1000000, '.2f') + ' million'",
+                    "as": "PopulationInMillions"
+                },
+                {
+                    "calculate": "format(datum['Annual CO₂ emissions (Mt)'], '.2f') + ' megatonnes'",
+                    "as": "EmissionsFormatted"
+                }
+            ],
+            "mark": {"type": "point", "tooltip": true, "fill": "red"},
+            "encoding": {
+                "x": {
+                    "field": "GDP Per Capita",
+                    "type": "quantitative",
+                    "axis": {"domain": false, "grid": false}
+                },
+                "y": {
+                    "field": "Annual CO₂ emissions (Mt)",
+                    "type": "quantitative",
+                    "scale": {"type": "log"},
+                    "axis": {"domain": false, "grid": false, "ticks": false}
+                },
+                "size": {
+                    "field": "Population",
+                    "type": "quantitative",
+                    "scale": {
+                        "range": [100, 1000]
+                    },
+                    "legend": null
+                },
+                "fill": {
+                    "field": "Annual CO₂ emissions (Mt)",
+                    "type": "quantitative",
+                    "scale": {
+                        "type": "log",
+                        "range": ["lightgreen", "orange", "red"]
+                    }
+                   
+                },
+                "tooltip": [
+                    {"field": "Country"},
+                    {
+                        "field": "PopulationInMillions",
+                        "title": "Population"
+                    },
+                    {"field": "EmissionsFormatted", "title": "CO₂"}
+                ]
+            }
+        }
+    ]
 }
