@@ -5,3 +5,7 @@ let runme = function (){
     xmlHttp.send( null );
     return xmlHttp.responseText;
 }
+
+window.onload = () => {
+    runme();
+};
